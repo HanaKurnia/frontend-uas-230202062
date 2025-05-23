@@ -1,7 +1,7 @@
 
 # 📘 Tutorial Laravel CRUD dengan AdminLTE
 
-Aplikasi ini adalah contoh implementasi CRUD sederhana untuk data **Program Studi (Prodi) dan Kelas** menggunakan **Laravel 10** dan **AdminLTE**.
+Aplikasi ini adalah contoh implementasi CRUD sederhana untuk data **Mata Kuliah dan Mahasiswa** menggunakan **Laravel 10** dan **AdminLTE**.
 
 ---
 
@@ -35,7 +35,7 @@ cp .env.example .env
 
 ```env
 database.default.hostname = localhost
-database.default.database = db_krs
+database.default.database = frontend-uas-230202062
 database.default.username = root
 database.default.password = 
 database.default.DBDriver = MySQLi
