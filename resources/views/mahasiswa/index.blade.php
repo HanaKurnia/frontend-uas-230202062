@@ -33,16 +33,16 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($mahasiswa as $mahasiswa)
+                @foreach ($mahasiswa as $datamhs)
                     <tr>
-                        <td>{{ $mahasiswa->npm }}</td>
-                        <td>{{ $mahasiswa->nama_mahasiswa }}</td>
-                        <td>{{ $mahasiswa->id_kelas }}</td>
-                        <td>{{ $mahasiswa->kode_prodi }}</td>
+                        <td>{{ $datamhs->npm }}</td>
+                        <td>{{ $datamhs->nama_mahasiswa }}</td>
+                        <td>{{ $datamhs->id_kelas }}</td>
+                        <td>{{ $datamhs->kode_prodi }}</td>
                         <td>
-                            <a href="{{ url('/mahasiswa/'.$mahasiswa->id_matkul.'/edit') }}" class="btn btn-sm btn-warning">Edit</a>
+                            <a href="{{ url('/mahasiswa/'.$datamhs->npm.'/edit') }}" class="btn btn-sm btn-warning">Edit</a>
 
-                            <form action="{{ url('/mahasiswa/'.$mahasiswa->id_matkul) }}" method="POST" class="d-inline">
+                            <form action="{{ url('/mahasiswa/'.$datamhs->npm) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" onclick="return confirm('Yakin ingin hapus?')" class="btn btn-sm btn-danger">

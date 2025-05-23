@@ -33,16 +33,16 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($datamatkul as $matkul)
+                @foreach ($matkul as $item)
                     <tr>
-                        <td>{{ $matkul->kode_matkul }}</td>
-                        <td>{{ $matkul->nama_matkul }}</td>
-                        <td>{{ $matkul->sks }}</td>
-                        <td>{{ $matkul->semester }}</td>
+                        <td>{{ $item->kode_matkul }}</td>
+                        <td>{{ $item->nama_matkul }}</td>
+                        <td>{{ $item->sks }}</td>
+                        <td>{{ $item->semester }}</td>
                         <td>
-                            <a href="{{ url('/matkul/'.$matkul->id_matkul.'/edit') }}" class="btn btn-sm btn-warning">Edit</a>
+                            <a href="{{ url('/matkul/'.$item->kode_matkul.'/edit') }}" class="btn btn-sm btn-warning">Edit</a>
 
-                            <form action="{{ url('/matkul/'.$matkul->id_matkul) }}" method="POST" class="d-inline">
+                            <form action="{{ url('/matkul/'.$item->kode_matkul) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" onclick="return confirm('Yakin ingin hapus?')" class="btn btn-sm btn-danger">
@@ -53,7 +53,7 @@
                     </tr>
                 @endforeach
 
-                @if ($datamatkul->isEmpty())
+                @if ($matkul->isEmpty())
                     <tr>
                         <td colspan="3" class="text-center">Data matkul belum tersedia.</td>
                     </tr>

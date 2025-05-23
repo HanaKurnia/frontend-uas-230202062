@@ -31,17 +31,17 @@
 
         <div class="mb-3">
             <label for="nama_mahasiswa" class="form-label">Nama Mahasiswa</label>
-            <input type="text" id="nama_mahasiswa" name="nama_mahasiswa" class="form-control" value="{{ old('nama_mahasiswa', $matkul->nama_mahasiswa) }}" required>
+            <input type="text" id="nama_mahasiswa" name="nama_mahasiswa" class="form-control" value="{{ old('nama_mahasiswa', $mahasiswa->nama_mahasiswa) }}" required>
         </div>
 
         <div class="mb-3">
             <label for="id_kelas" class="form-label">Nama Kelas</label>
-            <input type="text" id="id_kelas" name="id_kelas" class="form-control" value="{{ old('id_kelas', $matkul->id_kelas) }}" required>
+            <input type="text" id="id_kelas" name="id_kelas" class="form-control" value="{{ old('id_kelas', $mahasiswa->id_kelas) }}" required>
         </div>
 
         <div class="mb-3">
             <label for="kode_prodi" class="form-label">Nama Prodi</label>
-            <input type="text" id="kode_prodi" name="kode_prodi" class="form-control" value="{{ old('kode_prodi', $matkul->kode_prodi) }}" required>
+            <input type="text" id="kode_prodi" name="kode_prodi" class="form-control" value="{{ old('kode_prodi', $mahasiswa->kode_prodi) }}" required>
         </div>
 
         <button type="submit" class="btn btn-success">Update</button>

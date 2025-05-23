@@ -30,8 +30,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="nama_kelas" class="form-label">Nama Matkul</label>
-            <input type="text" id="nama_kelas" name="nama_kelas" class="form-control" value="{{ old('nama_kelas', $matkul->nama_kelas) }}" required>
+            <label for="nama_matkul" class="form-label">Nama Matkul</label>
+            <input type="text" id="nama_matkul" name="nama_matkul" class="form-control" value="{{ old('nama_matkul', $matkul->nama_matkul) }}" required>
         </div>
 
         <div class="mb-3">
