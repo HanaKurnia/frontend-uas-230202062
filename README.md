@@ -1,66 +1,252 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# 📘 Tutorial Laravel CRUD dengan AdminLTE
 
-## About Laravel
+Aplikasi ini adalah contoh implementasi CRUD sederhana untuk data **Program Studi (Prodi) dan Kelas** menggunakan **Laravel 10** dan **AdminLTE**.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 🐙 Cara Clone Repository GitHub (Backend)
+### - Langkah 1: Clone Repo dari GitHub
+- Buka terminal (CMD/Git Bash) lalu jalankan:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+```bash
+git clone https://github.com/kristiandimasadiwicaksono/SI-KRS-Backend.git
+```
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### - Langkah 2: Masuk ke Folder Project
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```bash
+cd SI-KRS-Backend
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### - Langkah 3: Install Dependency Laravel
 
-## Laravel Sponsors
+```bash
+composer install
+```
+### ✅ Langkah 4: Copy dan Edit File .env
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```bash
+cp .env.example .env
+```
+- Lalu edit isi `.env`:
 
-### Premium Partners
+```env
+database.default.hostname = localhost
+database.default.database = db_krs
+database.default.username = root
+database.default.password = 
+database.default.DBDriver = MySQLi
+database.default.DBPrefix =
+database.default.port = 3306
+```
+- Jangan lupa ubah bagian environment
+```env
+CI_ENVIRONMENT = development
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### - Langkah 5: Jalankan Migrasi Database
+```bash
+php spark migrate
+```
 
-## Contributing
+### - Langkah 6: Jalankan Server 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+php spark serve
+```
+- Server akan berjalan di browser:
+```
+http://localhost:8000
+```
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 📌 API Endpoint
 
-## Security Vulnerabilities
+### 📚 **Endpoint Matkul**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+* **GET** → `http://localhost:8080/matkul`
+* **GET (by Kode)** → `http://localhost:8080/matkul/{kode_matkul}`
+* **POST** → `http://localhost:8080/matkul`
+* **PUT** → `http://localhost:8080/matkul/{kode_matkul}`
+* **DELETE** → `http://localhost:8080/matkul/{kode_matkul}`
 
-## License
+### 🎓 **Endpoint Mahasiswa**
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* **GET** → `http://localhost:8080/mahasiswa`
+* **GET (by NPM)** → `http://localhost:8080/mahasiswa/{npm}`
+* **POST** → `http://localhost:8080/mahasiswa`
+* **PUT** → `http://localhost:8080/mahasiswa/{npm}`
+* **DELETE** → `http://localhost:8080/mahasiswa/{npm}`
+
+## 🧱 Import Database
+- Buka link repository
+  ```bash
+  https://github.com/WindyAnggitaPutri/SI_KRS_Database.git
+  ```
+- Download file db_krs kemudian import
+---
+
+## 🚀 Tutorial Install Laravel di Laragon (Windows)
+
+### - Langkah 1: Install Laragon
+
+1. Pastikan Laragon sudah terinstall, jika belum download Laragon di:
+   👉 [https://laragon.org/download/](https://laragon.org/download/)
+2. Setelah selesai, buka Laragon dan klik:
+
+   ```
+   Start All
+   ```
+---
+
+### - Langkah 2: Buat Project Laravel
+
+### 🔹 Cara 1: Otomatis (GUI Laragon)
+
+1. Klik kanan pada tray icon Laragon → pilih **Quick app → Laravel**
+2. Beri nama project, misal: `frontend`
+
+> 🎉 Laragon otomatis akan menjalankan `composer create-project laravel/laravel` dan membuat folder `frontend`.
+
+3. Setelah selesai, jalankan:
+
+   ```bash
+   cd frontend
+   php artisan serve
+   ```
+- Akses di browser:
+
+   ```
+   http://localhost:8000
+
+### - Langkah 3: Jalankan Laravel
+
+```bash
+cd C:\laragon\www\frontend
+php artisan serve
+```
+
+---
+
+## 🧠 Bonus: Perintah Penting Laravel
+
+| Perintah                      | Fungsi                           |
+| ----------------------------- | -------------------------------- |
+| `php artisan serve`           | Menjalankan server lokal Laravel |
+| `php artisan migrate`         | Menjalankan migrasi database     |
+| `php artisan make:model Nama` | Membuat model                    |
+| `php artisan make:controller` | Membuat controller               |
+
+
+### 4. Setup Database `.env`
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=fronted-uas-230202062
+DB_USERNAME=root
+DB_PASSWORD=
+```
+---
+
+## 🎨 Install AdminLTE di Laravel
+
+AdminLTE adalah template dashboard Bootstrap yang bisa langsung dipakai di Laravel menggunakan package `jeroennoten/laravel-adminlte`.
+
+### Langkah 1: Install Package
+- Buka terminal (CMD/Git Bash)
+```bash
+composer require jeroennoten/laravel-adminlte
+```
+
+### Langkah 2: Jalankan Instalasi AdminLTE
+
+```bash
+php artisan adminlte:install
+```
+- Ini akan:
+
+* Memasang konfigurasi AdminLTE (`config/adminlte.php`)
+* Menyediakan layout default
+* Menghubungkan dengan tampilan `auth` jika kamu menggunakan Laravel UI
+
+### Langkah 3: Buat Autentikasi
+
+```bash
+composer require laravel/ui
+php artisan ui bootstrap --auth
+npm install
+npm run dev
+```
+
+## 🔧 Konfigurasi Tambahan 
+
+- Ini untuk mengubah tampilan atau menu sidebar:
+- Buka file konfigurasi:
+
+```php
+config/adminlte.php
+```
+
+### - `config/adminlte.php
+- Tambahkan menu sidebar
+
+```php
+<?php
+
+return [
+
+   'menu' => [
+    // Sidebar search
+    [
+        'type' => 'sidebar-menu-search',
+        'text' => 'search',
+    ],
+
+    // Sidebar items
+    [
+        'text' => 'Matkul',
+        'url'  => 'matkul',
+        'icon' => 'fas fa-fw fa-university',
+    ],
+    [
+        'text' => 'Mahasiswa',
+        'url'  => 'mahasiswa',
+        'icon' => 'fas fa-fw fa-chalkboard',
+    ],
+],
+
+];
+
+```
+## 🧠 CRUD Controller
+
+- Buat controller:
+
+```bash
+php artisan make:controller DashboardController --resource
+```
+
+## 🖼️ Views (Blade)
+- Buat view:
+
+```bash
+php artisan make:view dashboard 
+```
+
+## ✅ Jalankan Aplikasi
+
+```bash
+php artisan serve
+```
+
+Buka di browser:
+[http://localhost:8000/prodi](http://localhost:8000/prodi)
+
+
+---
